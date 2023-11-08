@@ -357,11 +357,15 @@
 
 {% block column_value %}
     <span {{- block('attributes') -}}>
+        {%- set columnValue = value -%}
         {%- if translation_domain is not same as false -%}
-            {{- value|trans({}, translation_domain) -}}
-        {%- else -%}
-            {{- value -}}
+            {%- set columnValue = value|trans({}, translation_domain) -%}
         {%- endif -%}
+        {% if render_raw %}
+            {{- columnValue|raw -}}
+        {% else %}
+            {{- columnValue -}}
+        {% endif %}
     </span>
 {% endblock %}
 

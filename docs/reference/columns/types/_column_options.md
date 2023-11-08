@@ -203,3 +203,10 @@ Determines whether the column is visible to the user.
 
 Determines whether the column is personalizable.
 The non-personalizable columns are not modifiable by the [personalization feature](../../../features/personalization.md).
+
+### `render_raw`
+
+- **type**: `bool`
+- **default**: `false`
+
+Determines whether the column value should be rendered as raw HTML.

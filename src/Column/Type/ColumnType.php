@@ -86,6 +86,7 @@ final class ColumnType implements ColumnTypeInterface
             'translation_domain' => $options['value_translation_domain'] ?? $view->parent->parent->vars['translation_domain'] ?? null,
             'translation_parameters' => $options['value_translation_parameters'] ?? [],
             'attr' => $attr,
+            'render_raw' => $options['render_raw'],
         ]);
     }
 
@@ -185,6 +186,7 @@ final class ColumnType implements ColumnTypeInterface
                 'priority' => 0,
                 'visible' => true,
                 'personalizable' => true,
+                'render_raw' => false,
             ])
             ->setAllowedTypes('label', ['null', 'string', TranslatableInterface::class])
             ->setAllowedTypes('header_translation_domain', ['null', 'bool', 'string'])
@@ -204,6 +206,7 @@ final class ColumnType implements ColumnTypeInterface
             ->setAllowedTypes('priority', 'int')
             ->setAllowedTypes('visible', 'bool')
             ->setAllowedTypes('personalizable', 'bool')
+            ->setAllowedTypes('render_raw', 'bool')
         ;
     }
 
